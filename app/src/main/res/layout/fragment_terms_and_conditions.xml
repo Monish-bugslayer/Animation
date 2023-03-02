@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TermsAndConditions"
+    android:background="@color/white">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="305dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:text="TERMS AND CONDITIONS"
+        android:gravity="center"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</FrameLayout>
+
+    <TextView
+        android:id="@+id/aggrement"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_marginStart="10dp"
+        android:justificationMode="inter_word"
+        android:text="We use different technologies to process your information for these purposes. We use automated systems that analyse your content to provide you with things like customised search results, personalised ads or other features tailored to how you use our services. And we analyse your content to help us detect abuse such as spam, malware, and illegal content. We also use algorithms to recognise patterns in data. For example, Google Translate helps people communicate across languages by detecting common language patterns in phrases that you ask it to translate.
+
+We may combine the information we collect among our services and across your devices for the purposes described above. For example, if you watch videos of guitar players on YouTube, you might see an ad for guitar lessons on a site that uses our ad products. Depending on your account settings, your activity on other sites and apps may be associated with your personal information in order to improve Google’s services and the ads delivered by Google.
+
+If other users already have your email address or other information that identifies you, we may show them your publicly visible Google Account information, such as your name and photo. For example, this helps people identify an email coming from you.
+
+We’ll ask for your consent before using your information for a purpose that isn’t covered in this Privacy Policy."
+        android:layout_marginEnd="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
+    <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.838"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go back to home"
+        android:id="@+id/aggrement_to_home_fragment"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="605dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

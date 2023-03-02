@@ -1,0 +1,94 @@
+Add function
+1).when app starts:
+I/System.out: home Attach
+I/System.out: home OnViewStateRestored
+I/System.out: home Fragment  started
+D/OnStart: Activity starts
+D/OnResume: Activity resumed
+I/System.out:  home Resumed
+
+2) navigate from home frag to display frag:
+I/System.out: display fragment Attach 1
+I/System.out: display fragment OnViewStateRestored 1
+I/System.out: display fragment Fragment 1 started
+I/System.out:  display fragment Resumed
+
+3) navigate to terms and conditions frag from display:
+I/System.out: Terms and Conditions Attach
+I/System.out: Terms and Conditions OnViewStateRestored
+I/System.out: Terms and Conditions Fragment  started
+I/System.out:  Terms and Conditions Resumed
+
+4) hitting back button from terms and condition frag:
+I/System.out: Terms and Conditions OnStop
+I/System.out:  Terms and Conditions Destroyed view
+I/System.out: Terms and Conditions destroy
+I/System.out: Terms and Conditions Detach
+
+here the frag display is not destroyed instead the terms and condition is add on to it
+so it is active behind terms and condition frag.
+
+Replace function:
+
+1) while starting the app:
+I/System.out: home Attach
+I/System.out: home OnViewStateRestored
+I/System.out: home Fragment  started
+D/OnStart: Activity starts
+D/OnResume: Activity resumed
+I/System.out:  home Resumed
+
+2) moving from home to display fragment
+I/System.out: home OnStop
+I/System.out: display fragment Attach 1
+I/System.out: display fragment OnViewStateRestored 1
+I/System.out: display fragment Fragment 1 started
+I/System.out:  home Destroyed view
+I/System.out:  display fragment Resumed
+
+here while using replace fun home view is destroyed but the entire fragment is not destroyed
+
+3)moving from display to terms:
+I/System.out: display fragment OnStop
+I/System.out: Terms and Conditions Attach
+I/System.out: Terms and Conditions OnViewStateRestored
+I/System.out: Terms and Conditions Fragment  started
+I/System.out:  Terms and Conditions Resumed
+I/System.out: display fragment Destroyed view 1
+
+here also the display frag view will be destroyed and also it is not detached
+
+3) hitting back from terms and condition to display
+
+I/System.out: Terms and Conditions OnStop
+I/System.out: display fragment OnViewStateRestored 1
+I/System.out: display fragment Fragment 1 started
+I/System.out:  Terms and Conditions Destroyed view
+I/System.out: Terms and Conditions destroy
+I/System.out: Terms and Conditions Detach
+I/System.out:  display fragment Resumed
+
+while hitting back button the terms and condition stops and it is completely destroyed and detached
+and display fragment view is restored and it is started
+
+4) hitting back from display to home
+I/System.out: display fragment OnStop
+I/System.out: home OnViewStateRestored
+I/System.out: home Fragment  started
+I/System.out: display fragment Destroyed view 1
+I/System.out: display fragment destroy 1
+I/System.out: display fragment Detach 1
+I/System.out:  home Resumed
+
+the same occurs
+
+5) again from home to display
+
+I/System.out: home OnStop
+I/System.out: display fragment Attach 1
+I/System.out: display fragment OnViewStateRestored 1
+I/System.out: display fragment Fragment 1 started
+I/System.out:  home Destroyed view
+I/System.out:  display fragment Resumed
+
+the display fragment is not created instead it is restoring its view
